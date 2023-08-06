@@ -14,6 +14,8 @@ algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para v
 
 <br/>
 <br/>
+
+
 ## Tabela verdade
 ![image](https://github.com/SSar4/operator_bitwise/assets/33840492/d9bd78f2-b0c3-4535-8cf0-839ab3abfb82)
 ![image](https://github.com/SSar4/operator_bitwise/assets/33840492/0e3d4562-44da-4d4f-ab78-49a232d47dd9)
