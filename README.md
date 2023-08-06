@@ -1,6 +1,13 @@
 # operator_bitwise
 algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para verificar as permissões de usuários 
 
+importante compreender a lógica por trás da representação binária das permissões
+1. Cada permissão é representada por um número que é uma potência de 2
+2. Cada permissão tem um valor único que é uma potência de 2 (2^0 = `1`, 2^1 = `1`, 2^2 = `4`, 2^3 = `8`, 2^4 = `16`, 2^5 = `32`). Isso permite que as permissões sejam combinadas usando operações bitwise.
+3. Ao somar o número de cada permissão, cria-se uma permissão composta
+4. Ao subtrair o valor da permissão que se quer excluir cria-se uma nova permissão
+
+
 # executar no navegador
 
 ## navagador
