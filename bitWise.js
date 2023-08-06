@@ -25,8 +25,7 @@ function authenticateUser(username, pass) {
     const userExists = FindOneUser(username, pass);
 
     if (userExists) {
-        // Simulando recuperação das permissões do usuário do banco de dados
-        
+        // Verificando a permissão
         const userPermissions = userExists.permission;
 
         hasPermission(userPermissions, PERMISSION_ADMIN) ? console.log(`${username} é um administrador.`) : console.log(`${username} não é um administrador.`);
