@@ -10,4 +10,4 @@ algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para v
 # Pre-requisitos
 1. ter qualquer runtime que execute script js fora do navagador (node) instalado
 ## node
-1. node bitWise.js
+1. `Run` node bitWise.js
