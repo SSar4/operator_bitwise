@@ -1,16 +1,37 @@
 // Definindo as permissões
-const PERMISSION_READ = 1;
-const PERMISSION_WRITE = 2;
-const PERMISSION_DELETE = 4;
-const PERMISSION_UPDATE = 8;
-const PERMISSION_EXPORT = 16;
-const PERMISSION_ADMIN = 32;
+const PERMISSION_READ = 2**0;
+const PERMISSION_WRITE = 2**1;
+const PERMISSION_DELETE = 2**2;
+const PERMISSION_UPDATE = 2**3;
+const PERMISSION_EXPORT = 2**4;
+const PERMISSION_ADMIN = 2**5;
 
 //Função que simula buscar no banco de dado as permissoes do usuario
 function FindOneUser(user, pass) {
-    if (user === "admin" && pass === "admin") return { user: "admin", permission: 63 };
-    else if (user === "usuario1" && pass === "senha123") return { user: "usuario1", permission: 3 };
-    else if (user === "usuario2" && pass === "senha123") return { user: "usuario2", permission: 15 };
+    if (user === "admin" && pass === "admin") return {
+        user: "admin",
+        permission: [
+            PERMISSION_ADMIN,
+            PERMISSION_WRITE,
+            PERMISSION_READ,
+            PERMISSION_UPDATE,
+            PERMISSION_DELETE,
+            PERMISSION_EXPORT
+        ].reduce((acc,value)=> {return acc = acc + value},0)
+    };
+    else if (user === "usuario1" && pass === "senha123") return {
+        user: "usuario1",
+        permission: [
+            PERMISSION_READ,
+            PERMISSION_UPDATE,
+            ].reduce((acc, value) => { return acc = acc + value }, 0)
+    };
+    else if (user === "usuario2" && pass === "senha123") return {
+        user: "usuario2",
+        // Ilustra como as permissões podem ser revogadas
+        // Somatorio do valor total menos o numero da permissão a ser revogada
+        permission: (63 - 32 - 16 - 8)
+    };
     else return false;
 };
 
