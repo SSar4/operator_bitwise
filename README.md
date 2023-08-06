@@ -1,12 +1,14 @@
-# operator_bitwise
-algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para verificar as permissões de usuários
-o intuito desse repositorio é mostra como se trabalha com bits em js
+# modelo de permissões binárias
+O intuito desse repositorio é representar o gerenciaento de permissões em sistemas de software usando uma logica binária, para assim poder  combinar várias permissões e usar operações de bits.
 
-importante compreender a lógica por trás da representação binária das permissões
-1. Cada permissão é representada por um número que é uma potência de 2
-2. Cada permissão tem um valor único que é uma potência de 2 (2^0 = `1`, 2^1 = `1`, 2^2 = `4`, 2^3 = `8`, 2^4 = `16`, 2^5 = `32`). Isso permite que as permissões sejam combinadas usando operações bitwise.
-3. Ao somar o número de cada permissão, cria-se uma permissão composta
-4. Ao subtrair o valor da permissão que se quer excluir cria-se uma nova permissão
+### Por exemplo, se um usuário possui as permissões de leitura e escrita, você pode representá-las combinando as constantes:
+const userPermissions = PERMISSION_READ | PERMISSION_WRITE; // Equivalente a 3 (valor binário: 00011)
+
+
+Da mesma forma, para verificar se um usuário possui uma permissão específica, você pode usar a operação AND `&`:
+`const hasReadPermission = (userPermissions & PERMISSION_READ) === PERMISSION_READ;`
+
+Essa forma de representação de permissões usando bits é eficiente em termos de espaço de armazenamento e também permite realizar verificações rápidas de permissões com operações simples de bits.
 
 
 # executar no navegador
