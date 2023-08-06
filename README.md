@@ -1,5 +1,6 @@
 # operator_bitwise
-algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para verificar as permissões de usuários 
+algoritmo de sistema de permissão utilizando operador de bitwise ( | OR) para verificar as permissões de usuários
+o intuito desse repositorio é mostra como se trabalha com bits em js
 
 importante compreender a lógica por trás da representação binária das permissões
 1. Cada permissão é representada por um número que é uma potência de 2
